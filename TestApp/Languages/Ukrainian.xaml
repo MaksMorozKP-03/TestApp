@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="Settings">Налаштування</system:String>
+    <system:String x:Key="Language">Мова</system:String>
+    <system:String x:Key="English">Англійська</system:String>
+    <system:String x:Key="Ukrainian">Українська</system:String>
+    <system:String x:Key="Theme">Тема</system:String>
+    <system:String x:Key="Light">Світла</system:String>
+    <system:String x:Key="Dark">Темна</system:String>
+    <system:String x:Key="CurrencyName">Назва</system:String>
+    <system:String x:Key="CurrencyImage">Зображення</system:String>
+    <system:String x:Key="CurrencyPrice">Ціна(долари)</system:String>
+    <system:String x:Key="CurrencyPriceChange">Зміна ціни(за добу)</system:String>
+</ResourceDictionary>
