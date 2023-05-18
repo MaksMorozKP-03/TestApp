@@ -25,14 +25,7 @@ namespace TestApp
         public MainWindow()
         {
             InitializeComponent();
-            var rep = new CurrencyRepository();
-            Debug.WriteLine("Where is it");
-            rep.FetchData();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Just message");
+            DataContext = new CurrenciesViewModel();
         }
 
         private void LanguageUkrainianChecked(object sender, RoutedEventArgs e)

@@ -8,6 +8,7 @@
     <system:String x:Key="Theme">Theme</system:String>
     <system:String x:Key="Light">Light</system:String>
     <system:String x:Key="Dark">Dark</system:String>
+    <system:String x:Key="CurrencyRank">Rank</system:String>
     <system:String x:Key="CurrencyName">Name</system:String>
     <system:String x:Key="CurrencyImage">Image</system:String>
     <system:String x:Key="CurrencyPrice">Price(USD)</system:String>
