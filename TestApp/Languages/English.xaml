@@ -13,5 +13,6 @@
     <system:String x:Key="CurrencyImage">Image</system:String>
     <system:String x:Key="CurrencyPrice">Price(USD)</system:String>
     <system:String x:Key="CurrencyPriceChange">Price Change (24h)</system:String>
-    
+    <system:String x:Key="MainPage">Main</system:String>
+    <system:String x:Key="FindPage">Find Currency</system:String>
 </ResourceDictionary>

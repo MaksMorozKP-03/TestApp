@@ -3,26 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TestApp"
+        xmlns:local="clr-namespace:TestApp" xmlns:usercontrols="clr-namespace:TestApp.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" 
         Style="{StaticResource DefaultFontStyle}"
         d:DesignHeight="204.317" d:DesignWidth="345.53">
     <Grid>
-        <DockPanel LastChildFill="False">
-            <Menu DockPanel.Dock ="Top" Background="{DynamicResource Header}" Foreground="{DynamicResource Text}" Style="{StaticResource MenuFontStyle}">
-                <MenuItem Header="{DynamicResource Language}" >
-                    <RadioButton Content="{DynamicResource English}" Checked="LanguageEnglishChecked" 
-                                 Foreground="{DynamicResource Text}"/>
-                    <RadioButton Content="{DynamicResource Ukrainian}" IsChecked="true" Checked="LanguageUkrainianChecked" 
-                                 Foreground="{DynamicResource Text}"/>
-                </MenuItem>
-                <MenuItem Header="{DynamicResource Theme}" >
-                    <RadioButton Content="{DynamicResource Light}" IsChecked="true" Checked="ThemeLightChecked" Foreground="{DynamicResource Text}"/>
-                    <RadioButton Content="{DynamicResource Dark}" Checked="ThemeDarkChecked" Foreground="{DynamicResource Text}"/>
-                </MenuItem>
-            </Menu>
-        </DockPanel>
+        <usercontrols:MenuBar/>
         <Grid Background="{DynamicResource Background}" VerticalAlignment="Center" HorizontalAlignment="Center">
             <ListView x:Name="CurrenciesGrid" ItemsSource="{Binding Currencies}">
                 <ListView.View>
