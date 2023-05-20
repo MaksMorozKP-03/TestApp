@@ -12,17 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestApp.Models;
 
 namespace TestApp.Pages
 {
     /// <summary>
-    /// Interaction logic for CurrencyWindow.xaml
+    /// Interaction logic for CurrenciesPage.xaml
     /// </summary>
-    public partial class CurrencyWindow : Page
+    public partial class CurrenciesPage : Page
     {
-        public CurrencyWindow()
+        public CurrenciesPage()
         {
             InitializeComponent();
+            DataContext = new CurrenciesViewModel();
+        }     
+
+        private void WatchSelectedCurrency(object sender, MouseButtonEventArgs e)
+        {
+            SelectedCurrencyPage cp = new SelectedCurrencyPage(DataContext);
+            NavigationService.Navigate(cp);
         }
     }
 }

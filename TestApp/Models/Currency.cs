@@ -21,8 +21,6 @@ namespace TestApp.Models
         public string SymbolUrl { get; set; }
         [JsonPropertyName("total_supply")]
         public double? TotalSupply { get; set; }
-        [JsonPropertyName("max_supply")]
-        public double? MaxSupply { get; set; }
         [JsonPropertyName("price_change_24h")]
         public decimal DailyPriceChange { get; set; }
         [JsonPropertyName("last_updated")]

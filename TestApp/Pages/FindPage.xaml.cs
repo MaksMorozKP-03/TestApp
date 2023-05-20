@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,22 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TestApp.Models;
-using TestApp.Pages;
 
-namespace TestApp
+namespace TestApp.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FindPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FindPage : Page
     {
-        public MainWindow()
+        public FindPage()
         {
             InitializeComponent();
-            Main.Content = new CurrenciesPage();
         }
-
-        
     }
 }

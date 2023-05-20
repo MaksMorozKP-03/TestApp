@@ -8,11 +8,14 @@
     <system:String x:Key="Theme">Тема</system:String>
     <system:String x:Key="Light">Світла</system:String>
     <system:String x:Key="Dark">Темна</system:String>
+    <system:String x:Key="CurrencyId">Id</system:String>
     <system:String x:Key="CurrencyName">Назва</system:String>
     <system:String x:Key="CurrencyRank">Ранг</system:String>
     <system:String x:Key="CurrencyImage">Зображення</system:String>
     <system:String x:Key="CurrencyPrice">Ціна(долари)</system:String>
     <system:String x:Key="CurrencyPriceChange">Зміна ціни(за добу)</system:String>
+    <system:String x:Key="CurrencyTotalSupply">Поточна кількість</system:String>
+    <system:String x:Key="CurrencyLastUpdated">Востаннє оновлено</system:String>
     <system:String x:Key="MainPage">Головна</system:String>
     <system:String x:Key="FindPage">Знайти валюту</system:String>
 </ResourceDictionary>

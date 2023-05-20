@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,21 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestApp.Models;
-using TestApp.Pages;
 
-namespace TestApp
+namespace TestApp.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CurrencyWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SelectedCurrencyPage : Page
     {
-        public MainWindow()
+        public SelectedCurrencyPage()
         {
             InitializeComponent();
-            Main.Content = new CurrenciesPage();
         }
-
-        
+        public SelectedCurrencyPage(Object value) :this() 
+        {
+            DataContext = value;
+            Console.WriteLine();
+        }
     }
 }

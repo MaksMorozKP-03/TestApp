@@ -10,18 +10,7 @@
         d:DesignHeight="204.317" d:DesignWidth="345.53">
     <Grid>
         <usercontrols:MenuBar/>
-        <Grid Background="{DynamicResource Background}" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ListView x:Name="CurrenciesGrid" ItemsSource="{Binding Currencies}">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="{DynamicResource CurrencyRank}" DisplayMemberBinding="{Binding Path=Rank}" />
-                        <GridViewColumn Header="{DynamicResource CurrencyName}" DisplayMemberBinding="{Binding Path=Name}" />
-                        <GridViewColumn Header="{DynamicResource CurrencyPrice}" DisplayMemberBinding="{Binding Path=Price}" />
-                        <GridViewColumn Header="{DynamicResource CurrencyPriceChange}" DisplayMemberBinding="{Binding Path=DailyPriceChange}"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Grid>
-
+        <Frame x:Name="Main" />
+        
     </Grid>
 </Window>

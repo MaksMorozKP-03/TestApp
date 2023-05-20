@@ -1,0 +1,101 @@
+﻿<Page x:Class="TestApp.Pages.SelectedCurrencyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CurrencyWindow"
+      Style="{StaticResource DefaultFontStyle}">
+
+    <Grid>
+        <ListBox>
+            <Image Source = "{Binding SelectedCurrency.SymbolUrl}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ListBoxItem FontWeight="Bold" >
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyId}" />
+                    <TextBlock Grid.Column="1" Text=":"/>
+                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.Id}"/>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem FontWeight="Bold" >
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyName}" />
+                    <TextBlock Grid.Column="1" Text=":"/>
+                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.Name}"/>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem FontWeight="Bold" >
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyPrice}" />
+                    <TextBlock Grid.Column="1" Text=":"/>
+                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.Price}"/>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem FontWeight="Bold" >
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyRank}" />
+                    <TextBlock Grid.Column="1" Text=":"/>
+                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.Rank}"/>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem FontWeight="Bold" >
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyTotalSupply}" />
+                    <TextBlock Grid.Column="1" Text=":"/>
+                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.TotalSupply}"/>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem FontWeight="Bold" >
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyPriceChange}" />
+                    <TextBlock Grid.Column="1" Text=":"/>
+                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.DailyPriceChange}"/>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem FontWeight="Bold" >
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyLastUpdated}" />
+                    <TextBlock Grid.Column="1" Text=":"/>
+                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.LastUpdated}"/>
+                </Grid>
+            </ListBoxItem>
+        </ListBox>
+    </Grid>
+</Page>

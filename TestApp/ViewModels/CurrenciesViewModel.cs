@@ -14,6 +14,18 @@ namespace TestApp
     internal class CurrenciesViewModel
     {
         public ObservableCollection<Currency> Currencies { get; set; }
+        private Currency selectedCurrency;
+        public Currency SelectedCurrency
+        {
+            get
+            {
+                return selectedCurrency;
+            }
+            set
+            {
+                selectedCurrency = value;
+            }
+        }
         public CurrenciesViewModel()
         {
             FetchData();

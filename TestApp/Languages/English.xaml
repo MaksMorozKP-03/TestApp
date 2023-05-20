@@ -8,11 +8,14 @@
     <system:String x:Key="Theme">Theme</system:String>
     <system:String x:Key="Light">Light</system:String>
     <system:String x:Key="Dark">Dark</system:String>
+    <system:String x:Key="CurrencyId">Id</system:String>
     <system:String x:Key="CurrencyRank">Rank</system:String>
     <system:String x:Key="CurrencyName">Name</system:String>
     <system:String x:Key="CurrencyImage">Image</system:String>
     <system:String x:Key="CurrencyPrice">Price(USD)</system:String>
     <system:String x:Key="CurrencyPriceChange">Price Change (24h)</system:String>
+    <system:String x:Key="CurrencyTotalSupply">Currency Total Supply</system:String>
+    <system:String x:Key="CurrencyLastUpdated">Last Updated</system:String>
     <system:String x:Key="MainPage">Main</system:String>
     <system:String x:Key="FindPage">Find Currency</system:String>
 </ResourceDictionary>
