@@ -28,7 +28,6 @@ namespace TestApp.Pages
         public SelectedCurrencyPage(Object value) :this() 
         {
             DataContext = value;
-            Console.WriteLine();
         }
     }
 }

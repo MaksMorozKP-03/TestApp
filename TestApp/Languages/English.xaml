@@ -16,6 +16,6 @@
     <system:String x:Key="CurrencyPriceChange">Price Change (24h)</system:String>
     <system:String x:Key="CurrencyTotalSupply">Currency Total Supply</system:String>
     <system:String x:Key="CurrencyLastUpdated">Last Updated</system:String>
-    <system:String x:Key="MainPage">Main</system:String>
+    <system:String x:Key="Back">Back</system:String>
     <system:String x:Key="FindPage">Find Currency</system:String>
 </ResourceDictionary>

@@ -32,5 +32,32 @@ namespace TestApp.Pages
             SelectedCurrencyPage cp = new SelectedCurrencyPage(DataContext);
             NavigationService.Navigate(cp);
         }
+        private void FindCurrencyClick(object sender, RoutedEventArgs e)
+        {
+            FindPage findPage = new FindPage();
+            NavigationService.Navigate(findPage);
+        }
+
+        private void LanguageUkrainianChecked(object sender, RoutedEventArgs e)
+        {
+            AppearanceEditor.ChangeLanguage(new Uri("Languages/Ukrainian.xaml", UriKind.Relative));
+        }
+
+        private void LanguageEnglishChecked(object sender, RoutedEventArgs e)
+        {
+            AppearanceEditor.ChangeLanguage(new Uri("Languages/English.xaml", UriKind.Relative));
+        }
+
+        private void ThemeDarkChecked(object sender, RoutedEventArgs e)
+        {
+            AppearanceEditor.ChangeTheme(new Uri("Themes/Dark.xaml", UriKind.Relative));
+        }
+
+        private void ThemeLightChecked(object sender, RoutedEventArgs e)
+        {
+            AppearanceEditor.ChangeTheme(new Uri("Themes/Light.xaml", UriKind.Relative));
+        }
+
+              
     }
 }

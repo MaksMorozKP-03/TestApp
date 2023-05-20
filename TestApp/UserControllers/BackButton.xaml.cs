@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TestApp.Models;
-using TestApp.Pages;
 
-namespace TestApp
+namespace TestApp.UserControllers
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BackButton.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BackButton : UserControl
     {
-        public MainWindow()
+        public BackButton()
         {
-            
+            InitializeComponent();
         }
-
-        
     }
 }

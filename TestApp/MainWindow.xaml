@@ -3,14 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TestApp" xmlns:usercontrols="clr-namespace:TestApp.UserControls"
+        xmlns:local="clr-namespace:TestApp"
         mc:Ignorable="d"
         Title="MainWindow" 
         Style="{StaticResource DefaultFontStyle}"
         d:DesignHeight="204.317" d:DesignWidth="345.53">
     <Grid>
-        <usercontrols:MenuBar/>
-        <Frame x:Name="Main" />
-        
+        <Frame Source="Pages/CurrenciesPage.xaml" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

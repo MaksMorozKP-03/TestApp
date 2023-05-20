@@ -17,6 +17,10 @@
                 <Setter Property="Control.FontSize" Value="20" />
                 <Setter Property="Control.FontFamily" Value="Segoe UI"/>
             </Style>
+            <Style x:Key="BackButtonFontStyle">
+                <Setter Property="Control.FontSize" Value="24" />
+                <Setter Property="Control.FontFamily" Value="Segoe UI"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

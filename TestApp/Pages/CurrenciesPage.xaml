@@ -9,7 +9,22 @@
       Style="{StaticResource DefaultFontStyle}"
       Title="CurrenciesPage">
 
-    <Grid Background="{DynamicResource Background}" VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid Background="{DynamicResource Background}">
+        <DockPanel LastChildFill="False">
+            <Menu DockPanel.Dock ="Top" Background="{DynamicResource Header}" Foreground="{DynamicResource Text}" Style="{StaticResource MenuFontStyle}">
+                <MenuItem Header="{DynamicResource Language}" >
+                    <RadioButton Content="{DynamicResource English}" Checked="LanguageEnglishChecked" 
+                                 Foreground="{DynamicResource Text}"/>
+                    <RadioButton Content="{DynamicResource Ukrainian}" IsChecked="true" Checked="LanguageUkrainianChecked" 
+                                 Foreground="{DynamicResource Text}"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource Theme}" >
+                    <RadioButton Content="{DynamicResource Light}" IsChecked="true" Checked="ThemeLightChecked" Foreground="{DynamicResource Text}"/>
+                    <RadioButton Content="{DynamicResource Dark}" Checked="ThemeDarkChecked" Foreground="{DynamicResource Text}"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource FindPage}" Foreground="{DynamicResource Text}" Click="FindCurrencyClick"/>
+            </Menu>
+        </DockPanel>
         <ListView x:Name="CurrenciesGrid" ItemsSource="{Binding Currencies}" 
                   SelectedItem="{Binding SelectedCurrency}" MouseDoubleClick="WatchSelectedCurrency"
                   HorizontalAlignment="Center" VerticalAlignment="Center">

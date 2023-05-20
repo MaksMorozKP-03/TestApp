@@ -16,6 +16,6 @@
     <system:String x:Key="CurrencyPriceChange">Зміна ціни(за добу)</system:String>
     <system:String x:Key="CurrencyTotalSupply">Поточна кількість</system:String>
     <system:String x:Key="CurrencyLastUpdated">Востаннє оновлено</system:String>
-    <system:String x:Key="MainPage">Головна</system:String>
+    <system:String x:Key="Back">Назад</system:String>
     <system:String x:Key="FindPage">Знайти валюту</system:String>
 </ResourceDictionary>
