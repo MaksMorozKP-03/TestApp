@@ -12,32 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TestApp.Models;
+using TestApp.Services;
 
-namespace TestApp.Pages
+namespace TestApp.Components
 {
     /// <summary>
-    /// Interaction logic for CurrenciesPage.xaml
+    /// Interaction logic for MenuBar.xaml
     /// </summary>
-    public partial class CurrenciesPage : Page
+    public partial class MenuBar : UserControl
     {
-        public CurrenciesPage()
+        public MenuBar()
         {
             InitializeComponent();
-            DataContext = new CurrenciesViewModel();
-        }     
-
-        private void WatchSelectedCurrency(object sender, MouseButtonEventArgs e)
-        {
-            SelectedCurrencyPage cp = new SelectedCurrencyPage(DataContext);
-            NavigationService.Navigate(cp);
         }
-        private void FindCurrencyClick(object sender, RoutedEventArgs e)
-        {
-            FindPage findPage = new FindPage();
-            NavigationService.Navigate(findPage);
-        }
-
         private void LanguageUkrainianChecked(object sender, RoutedEventArgs e)
         {
             AppearanceEditor.ChangeLanguage(new Uri("Languages/Ukrainian.xaml", UriKind.Relative));
@@ -57,7 +44,5 @@ namespace TestApp.Pages
         {
             AppearanceEditor.ChangeTheme(new Uri("Themes/Light.xaml", UriKind.Relative));
         }
-
-              
     }
 }

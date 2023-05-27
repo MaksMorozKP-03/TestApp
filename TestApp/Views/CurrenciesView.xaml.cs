@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TestApp.Pages
+namespace TestApp.Views
 {
     /// <summary>
-    /// Interaction logic for FindPage.xaml
+    /// Interaction logic for CurrenciesView.xaml
     /// </summary>
-    public partial class FindPage : Page
+    public partial class CurrenciesView : UserControl
     {
-        public FindPage()
+        public CurrenciesView()
         {
             InitializeComponent();
         }

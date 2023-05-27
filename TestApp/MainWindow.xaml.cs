@@ -14,7 +14,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestApp.Models;
-using TestApp.Pages;
 
 namespace TestApp
 {
@@ -25,7 +24,7 @@ namespace TestApp
     {
         public MainWindow()
         {
-            
+            InitializeComponent();
         }
 
         

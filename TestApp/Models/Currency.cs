@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestApp.Models
 {
-    class Currency
+    public class Currency
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

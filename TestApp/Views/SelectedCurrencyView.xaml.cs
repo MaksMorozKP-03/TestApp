@@ -12,22 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TestApp.Models;
 
-namespace TestApp.Pages
+namespace TestApp.Views
 {
     /// <summary>
-    /// Interaction logic for CurrencyWindow.xaml
+    /// Interaction logic for SelectedCurrencyView.xaml
     /// </summary>
-    public partial class SelectedCurrencyPage : Page
+    public partial class SelectedCurrencyView : UserControl
     {
-        public SelectedCurrencyPage()
+        public SelectedCurrencyView()
         {
             InitializeComponent();
-        }
-        public SelectedCurrencyPage(Object value) :this() 
-        {
-            DataContext = value;
         }
     }
 }
