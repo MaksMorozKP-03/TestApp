@@ -18,4 +18,9 @@
     <system:String x:Key="CurrencyLastUpdated">Востаннє оновлено</system:String>
     <system:String x:Key="Back">Назад</system:String>
     <system:String x:Key="FindPage">Знайти валюту</system:String>
+    <system:String x:Key="Details">Деталі</system:String>
+    <system:String x:Key="Main">Головна</system:String>
+    <system:String x:Key="MarketInfo">Ви можете купити це за {0} доларів на платформі {1}</system:String>
+    <system:String x:Key="Find">Знайти</system:String>
+    <system:String x:Key="PrintId">Просто введіть айді валют через кому:</system:String>
 </ResourceDictionary>

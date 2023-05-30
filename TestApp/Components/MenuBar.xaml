@@ -8,18 +8,34 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <DockPanel LastChildFill="False">
-            <Menu DockPanel.Dock ="Top" Background="{DynamicResource Header}" Foreground="{DynamicResource Text}" Style="{StaticResource MenuFontStyle}">
+            <Menu DockPanel.Dock ="Top">
+                <MenuItem Header="{DynamicResource Main}" 
+                          Command="{Binding CurrenciesNavigationCommand}"
+                           />
+                <MenuItem Header="{DynamicResource FindPage}" 
+                          Command="{Binding FindCurrencyNavigationCommand}"
+                          />
                 <MenuItem Header="{DynamicResource Language}" >
-                    <RadioButton Content="{DynamicResource English}" Checked="LanguageEnglishChecked" 
-                                 Foreground="{DynamicResource Text}"/>
-                    <RadioButton Content="{DynamicResource Ukrainian}" IsChecked="true" Checked="LanguageUkrainianChecked" 
-                                 Foreground="{DynamicResource Text}"/>
+                    <RadioButton Content="{DynamicResource English}" 
+                                 Command="{Binding LanguageChangeCommand}"
+                                 CommandParameter="English"
+                                 />
+                    <RadioButton Content="{DynamicResource Ukrainian}" IsChecked="true" 
+                                 Command="{Binding LanguageChangeCommand}"
+                                 CommandParameter="Ukrainian"
+                                 />
                 </MenuItem>
                 <MenuItem Header="{DynamicResource Theme}" >
-                    <RadioButton Content="{DynamicResource Light}" IsChecked="true" Checked="ThemeLightChecked" Foreground="{DynamicResource Text}"/>
-                    <RadioButton Content="{DynamicResource Dark}" Checked="ThemeDarkChecked" Foreground="{DynamicResource Text}"/>
+                    <RadioButton Content="{DynamicResource Light}" IsChecked="true" 
+                                Command="{Binding ThemeChangeCommand}"
+                                 CommandParameter="Light"
+                                 />
+                    <RadioButton Content="{DynamicResource Dark}" 
+                                 Command="{Binding ThemeChangeCommand}"
+                                 CommandParameter="Dark" 
+                                 />
                 </MenuItem>
-                <MenuItem Header="{DynamicResource FindPage}" Foreground="{DynamicResource Text}"/>
+
             </Menu>
         </DockPanel>
     </Grid>

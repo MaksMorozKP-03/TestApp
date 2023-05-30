@@ -7,19 +7,43 @@
              xmlns:components="clr-namespace:TestApp.Components"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <components:MenuBar/>
-        <ListView x:Name="CurrenciesGrid" ItemsSource="{Binding Currencies}" 
-                  SelectedItem="{Binding SelectedCurrency}" 
-                  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="{DynamicResource CurrencyRank}" DisplayMemberBinding="{Binding Path=Rank}" />
-                    <GridViewColumn Header="{DynamicResource CurrencyName}" DisplayMemberBinding="{Binding Path=Name}" />
-                    <GridViewColumn Header="{DynamicResource CurrencyPrice}" DisplayMemberBinding="{Binding Path=Price}" />
-                    <GridViewColumn Header="{DynamicResource CurrencyPriceChange}" DisplayMemberBinding="{Binding Path=DailyPriceChange}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="80" Height="*"/>
+            <RowDefinition Height="4*"/>
+
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Column="2"
+                      ItemsSource="{Binding Currencies}" 
+                      SelectedItem="{Binding SelectedCurrency}" 
+                      FontSize="16"
+                      VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="{DynamicResource CurrencyRank}" DisplayMemberBinding="{Binding Path=Rank}" />
+                        <GridViewColumn Header="{DynamicResource CurrencyName}" DisplayMemberBinding="{Binding Path=Name}" />
+                        <GridViewColumn Header="{DynamicResource CurrencyPrice}" DisplayMemberBinding="{Binding Path=Price}" />
+                        <GridViewColumn Header="{DynamicResource CurrencyPriceChange}" DisplayMemberBinding="{Binding Path=DailyPriceChange}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <Button Grid.Column="3"  Content="{DynamicResource Details}"                    
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center" 
+                    Background="{DynamicResource ButtonBack}"
+                                     
+                    Padding="5, 3, 5, 3"                   
+                    Command="{Binding SelectCurrencyCommand}" />
+        </Grid>
+
     </Grid>
 </UserControl>

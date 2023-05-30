@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TestApp.Stores;
 
 namespace TestApp.ViewModels
 {
     public class MainViewModel :ViewModelBase
     {
-        public ViewModelBase CurrentViewModel { get; }
+        private readonly NavigationStore _navigationStore;
 
-        public MainViewModel()
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
+        public MenuBarViewModel MenuViewModel { get; }
+
+        public MainViewModel(NavigationStore navigationStore)
         {
-            CurrentViewModel = new CurrenciesViewModel();
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+            MenuViewModel = new MenuBarViewModel(navigationStore);
+        }
+
+        private void OnCurrentViewModelChanged()
+        {
+           OnPropertyChanged(nameof(CurrentViewModel));
         }
     }
 }

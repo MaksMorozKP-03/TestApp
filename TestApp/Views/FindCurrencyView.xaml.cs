@@ -3,11 +3,11 @@
 namespace TestApp.Views
 {
     /// <summary>
-    /// Interaction logic for SelectedCurrencyView.xaml
+    /// Interaction logic for FindCurrencyView.xaml
     /// </summary>
-    public partial class SelectedCurrencyView : UserControl
+    public partial class FindCurrencyView : UserControl
     {
-        public SelectedCurrencyView()
+        public FindCurrencyView()
         {
             InitializeComponent();
         }

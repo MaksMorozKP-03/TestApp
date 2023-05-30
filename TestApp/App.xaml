@@ -8,18 +8,6 @@
                 <ResourceDictionary x:Name="LanguageDict" Source="Languages/Ukrainian.xaml"/>
                 <ResourceDictionary x:Name="ThemeDict" Source="Themes/Light.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style x:Key="DefaultFontStyle">
-                <Setter Property="Control.FontSize" Value="18" />
-                <Setter Property="Control.FontFamily" Value="Segoe UI"/>
-            </Style>
-            <Style x:Key="MenuFontStyle">
-                <Setter Property="Control.FontSize" Value="20" />
-                <Setter Property="Control.FontFamily" Value="Segoe UI"/>
-            </Style>
-            <Style x:Key="BackButtonFontStyle">
-                <Setter Property="Control.FontSize" Value="24" />
-                <Setter Property="Control.FontFamily" Value="Segoe UI"/>
-            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

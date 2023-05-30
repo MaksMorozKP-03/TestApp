@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using TestApp.Stores;
 using TestApp.ViewModels;
 
 namespace TestApp
@@ -14,15 +9,22 @@ namespace TestApp
     /// </summary>
     public partial class App : Application
     {
+        private readonly NavigationStore _navigationStore;
         protected override void OnStartup(StartupEventArgs e)
         {
+            _navigationStore.CurrentViewModel = new CurrenciesViewModel(_navigationStore);
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(_navigationStore)
             };
             MainWindow.Show();
+            
 
             base.OnStartup(e);
+        }
+        public App()
+        {
+            _navigationStore = new NavigationStore();
         }
     }
 }

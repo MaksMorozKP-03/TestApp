@@ -1,15 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TestApp.ViewModels;
 
 namespace TestApp.Stores
 {
-    internal class NavigationStore
+    public class NavigationStore
     {
         private ViewModelBase _viewModel;
+        public ViewModelBase CurrentViewModel
+        {
+            get => _viewModel;
+            set 
+            {
+                _viewModel = value;
+                OnCurrentViewModelChanged();
+            } 
+        }
+
+        private void OnCurrentViewModelChanged()
+        {
+            CurrentViewModelChanged?.Invoke();
+        }
+
+        public event Action CurrentViewModelChanged; 
 
     }
 }

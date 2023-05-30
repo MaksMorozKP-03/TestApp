@@ -7,9 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="{DynamicResource Background}">
-        
-        <ListBox HorizontalAlignment="Center" VerticalAlignment="Center" >
-            <Image Source = "{Binding SelectedCurrency.SymbolUrl}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="30" Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="1" 
+            HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Image Source = "{Binding Currency.SymbolUrl}"/>
             <ListBoxItem FontWeight="Bold" >
                 <Grid>
                     <Grid.ColumnDefinitions >
@@ -19,7 +24,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyId}" />
                     <TextBlock Grid.Column="1" Text=":"/>
-                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.Id}"/>
+                    <TextBlock Grid.Column="2" Text="{Binding Currency.Id}"/>
                 </Grid>
             </ListBoxItem>
             <ListBoxItem>
@@ -31,7 +36,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyName}" />
                     <TextBlock Grid.Column="1" Text=":"/>
-                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.Name}"/>
+                    <TextBlock Grid.Column="2" Text="{Binding Currency.Name}"/>
                 </Grid>
             </ListBoxItem>
             <ListBoxItem >
@@ -43,7 +48,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyPrice}" />
                     <TextBlock Grid.Column="1" Text=":"/>
-                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.Price}"/>
+                    <TextBlock Grid.Column="2" Text="{Binding Currency.Price}"/>
                 </Grid>
             </ListBoxItem>
             <ListBoxItem>
@@ -55,7 +60,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyRank}" />
                     <TextBlock Grid.Column="1" Text=":"/>
-                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.Rank}"/>
+                    <TextBlock Grid.Column="2" Text="{Binding Currency.Rank}"/>
                 </Grid>
             </ListBoxItem>
             <ListBoxItem >
@@ -67,7 +72,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyTotalSupply}" />
                     <TextBlock Grid.Column="1" Text=":"/>
-                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.TotalSupply}"/>
+                    <TextBlock Grid.Column="2" Text="{Binding Currency.TotalSupply}"/>
                 </Grid>
             </ListBoxItem>
             <ListBoxItem >
@@ -79,7 +84,7 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyPriceChange}" />
                     <TextBlock Grid.Column="1" Text=":"/>
-                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.DailyPriceChange}"/>
+                    <TextBlock Grid.Column="2" Text="{Binding Currency.DailyPriceChange}"/>
                 </Grid>
             </ListBoxItem>
             <ListBoxItem >
@@ -91,9 +96,31 @@
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{DynamicResource CurrencyLastUpdated}" />
                     <TextBlock Grid.Column="1" Text=":"/>
-                    <TextBlock Grid.Column="2" Text="{Binding SelectedCurrency.LastUpdated}"/>
+                    <TextBlock Grid.Column="2" Text="{Binding Currency.LastUpdated}"/>
                 </Grid>
             </ListBoxItem>
         </ListBox>
+        <Grid Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Column="1" ItemsSource="{Binding MarketInfos}" BorderThickness="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock >
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{StaticResource MarketInfo}">
+                                    <Binding Path="Price"/>
+                                    <Binding Path="MarketName"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </Grid>
     </Grid>
 </UserControl>

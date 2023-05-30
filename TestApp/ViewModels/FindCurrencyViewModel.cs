@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+using TestApp.Commands;
 using TestApp.Models;
+using TestApp.Stores;
 
 namespace TestApp.ViewModels
 {
-    internal class FindCurrencyViewModel
+    public class FindCurrencyViewModel : ViewModelBase
     {
+        private NavigationStore _navigationStore;
         private ObservableCollection<Currency> _foundCurrencies;
         public ObservableCollection<Currency> FoundCurrencies
         {
@@ -18,18 +18,43 @@ namespace TestApp.ViewModels
             {
                 return _foundCurrencies;
             }
-        }
+            set
+            {
+                _foundCurrencies = value;
+                OnPropertyChanged(nameof(FoundCurrencies));
+                if (_foundCurrencies is not null && _foundCurrencies.Any())
+                    _isTableVisible = true;
+                else _isTableVisible = false;
 
-        public FindCurrencyViewModel()
+                OnPropertyChanged(nameof(IsTableVisible));
+            }
+        }
+        private string _queryString;
+        public string QueryString
         {
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            client.DefaultRequestHeaders.Add("User-Agent", "Agent");
+            get { return _queryString; }
+            set
+            {
+                _queryString = value;
+                OnPropertyChanged(nameof(QueryString));               
+            }
         }
-        //private ObservableCollection<Currency> FindCurrencies(string name)
-        //{
+        private bool _isTableVisible;
+        public Visibility IsTableVisible
+        {
+            get
+            {
+                return _isTableVisible
+                    ? Visibility.Visible : Visibility.Hidden;
+            }
+        }
 
-        //}
+        public ICommand FindCurrencyCommand { get; }
 
+        public FindCurrencyViewModel(NavigationStore navigationStore)
+        {
+            _navigationStore = navigationStore;
+            FindCurrencyCommand = new FindCurrencyCommand(this);
+        }
     }
 }

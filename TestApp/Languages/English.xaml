@@ -18,4 +18,9 @@
     <system:String x:Key="CurrencyLastUpdated">Last Updated</system:String>
     <system:String x:Key="Back">Back</system:String>
     <system:String x:Key="FindPage">Find Currency</system:String>
+    <system:String x:Key="Details">Details</system:String>
+    <system:String x:Key="Main">Main</system:String>
+    <system:String x:Key="MarketInfo">You can buy it for {0} USD at {1}</system:String>
+    <system:String x:Key="Find">Find</system:String>
+    <system:String x:Key="PrintId">Just print coins id separated by commas:</system:String>
 </ResourceDictionary>

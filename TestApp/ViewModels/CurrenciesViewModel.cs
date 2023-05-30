@@ -1,18 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Net.Http;
-using System.Net.Http.Json;
+﻿using System.Collections.ObjectModel;
+using TestApp.Commands;
 using TestApp.Models;
-using TestApp.ViewModels;
+using TestApp.Services;
+using TestApp.Stores;
 
-namespace TestApp
+namespace TestApp.ViewModels
 {
     public class CurrenciesViewModel : ViewModelBase
     {
         private readonly ObservableCollection<Currency> _currencies;
 
-        public IEnumerable<Currency> Currencies => _currencies;
+        public ObservableCollection<Currency> Currencies => _currencies;
         private Currency _selectedCurrency;
+
         public Currency SelectedCurrency
         {
             get
@@ -22,19 +22,17 @@ namespace TestApp
             set
             {
                 _selectedCurrency = value;
+                SelectCurrencyCommand.ChangeSelectedCurrency(_selectedCurrency);
             }
         }
 
-        public CurrenciesViewModel()
-        {
-            HttpClient client = new HttpClient();
+        public SelectedCurrencyNavigationCommand SelectCurrencyCommand { get; }
 
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            client.DefaultRequestHeaders.Add("User-Agent", "Agent");
-            _currencies = client.GetFromJsonAsync<ObservableCollection<Currency>>
-                ("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en").Result ??
-                new ObservableCollection<Currency>();
-            client.Dispose();
+        public CurrenciesViewModel(NavigationStore navigationStore)
+        {
+            CurrenciesService currenciesService = new CurrenciesService();           
+            _currencies = currenciesService.GetTopCurrencies();
+            SelectCurrencyCommand = new SelectedCurrencyNavigationCommand(_selectedCurrency, navigationStore);
         }
 
     }

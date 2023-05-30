@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace TestApp.Models
 {
@@ -17,6 +13,8 @@ namespace TestApp.Models
         public decimal Price { get; set; }
         [JsonPropertyName("market_cap_rank")]
         public int Rank { get; set; }
+        [JsonPropertyName("total_volume")]
+        public decimal Volume { get; set; }
         [JsonPropertyName("image")]
         public string SymbolUrl { get; set; }
         [JsonPropertyName("total_supply")]
